@@ -4,6 +4,7 @@
     "description": "Archestra Syntax highlighting.",
     "version": "0.1.0",
     "publisher": "RoanFourie",
+    "repository": "https://github.com/RoanFourie/archestra-lang.git",
     "license": "Apache-2.0",
     "engines": {
         "vscode": "^1.36.0"
