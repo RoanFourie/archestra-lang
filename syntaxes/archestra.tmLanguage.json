@@ -1,0 +1,191 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "language-archestra",
+	"displayName": "ArchestrA Language Support",
+	"version": "0.1.0",
+	"description": "ArchestrA IDE's quickscript.net syntax highlighting.",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"author": {
+		"name": "roanfourie"
+	  },
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"begin": "^(?=\\t)",
+			"end": "(?=[^\\t])",
+			"name": "meta.leading-space",
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "meta.odd-tab.tabs"
+						},
+						"2": {
+							"name": "meta.even-tab.tabs"
+						}
+					},
+					"match": "(\\t)(\\t)?"
+				}
+			]
+		},
+		{
+			"begin": "^(?= )",
+			"end": "(?=[^ ])",
+			"name": "meta.leading-space",
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "meta.odd-tab.spaces"
+						},
+						"2": {
+							"name": "meta.even-tab.spaces"
+						}
+					},
+					"match": "(  )(  )?"
+				}
+			]
+		},
+		{
+			"begin": "(^[ \\t]+)?(?=')",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.archestra"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.archestra"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.apostrophe.archestra"
+				}
+			]
+		},
+		{
+			"match": "(?i:\\b(if|then|elseif|else|endif|for|to|step|exit for|skip|next|each|in|try|catch|finally|endtry|while|exit while|endwhile|exit)\\b)",
+			"name": "keyword.control.archestra"
+		},
+		{
+			"match": "&|\\*|\\-|\\+|~|==|=|<=|>=|<>|<|>|\\^|\\*\\*|\\||(?i:\\b(Mod|And|Not|Or|SHL|SHR)\\b)",
+			"name": "keyword.operator.archestra"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "storage.type.archestra"
+				},
+				"2": {
+					"name": "variable.other.bfeac.archestra"
+				},
+				"3": {
+					"name": "meta.separator.comma.archestra"
+				}
+			},
+			"match": "(?i:(dim)\\s*(?:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)\\s*(,?)))",
+			"name": "variable.other.dim.archestra"
+		},
+		{
+			"match": "(?i:\\s*\\b(Dim|New)\\b\\s*)",
+			"name": "storage.type.archestra"
+		},
+		{
+			"match": "(?i:\\s*\\b(FALSE|NULL|TRUE)\\b)",
+			"name": "constant.language.archestra"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.variable.archestra"
+				}
+			},
+			"match": "(\\$)[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b\\s*",
+			"name": "variable.other.archestra"
+		},
+		{
+			"name": "constant.numeric.archestra",
+			"match": "-?\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\b"
+		},
+		{
+			"name": "comment.block",
+			"begin": "{",
+			"end": "}"
+		},
+		{
+			"name": "support.class.archestra",
+			"match": "(?i:\\b(aaGraphic|aaDBClient|aaDBCommand|aaDBCommandType|aaDBConnection|aaDBRow|aaDBTransaction|aaDBTransactionState)\\b)"
+		},
+		{
+			"name": "support.type",
+			"match": "(?i:\\s*\\b(Boolean|Discrete|Integer|ElapsedTime|Float|Real|Double|String|Message|Time|Object|Indirect)\\b\\s*)"
+		},
+		{
+			"name": "support.function.archestra",
+			"match": "(?i:\\s*\\b(Abs|ArcCos|ArcSin|ArcTan|Cos|Exp|Int|Log|Log10|LogN|Pi|Round|Sgn|Sin|Sqrt|Tan|Trunc|ActivateApp|DateTimeGMT|IsBad|IsGood|IsInitializing|IsUncertain|IsUsable|LogCustom|LogDataChangeEvent|LogError|LogMessage|LogTrace|LogWarning|SendKeys|SetAttributeVT|SetAttributeVT2|SetBad|SetGood|SetInitializing|SetUncertain|SignedWrite|WriteStatus|WWControl|DText|StringASCII|StringChar|StringCompare|StringCompareNoCase|StringFromGMTTimeToLocal|StringFromIntg|StringFromReal|StringFromTime|StringFromTimeLocal|StringInString|StringLeft|StringLen|StringLower|StringMid|StringReplace|StringRight|StringSpace|StringTest|StringToIntg|StringToReal|StringTrim|StringUpper|Text|WWStringFromTime|ShowLoginDialog|ShowGraphic|ShowContent|Logoff|HideSelf|HideGraphic|GetCPQuality|GetCPTimeStamp|CreateObject|Now|WWExecute|WWPoke|WWRequest)\\b\\s*)"
+		},
+		{
+			"name": "support.function.archestra.intouch",
+			"match": "(?i:\\s*\\b(AddPermission|AttemptInvisibleLogon|ChangePassword|EnableDisableKeys|FileCopy|FileDelete|FileMove|FileReadFields|FileReadMessage|FileWriteFields|FileWriteMessage|GetAccountStatus|GetNodeName|InfoAppTitle|InfoDisk|InfoFile|InfoInTouchAppDir|InfoResources|InTouchVersion|InvisibleVerifyCredentials|IsAssignedRole|LaunchTagViewer|LogonCurrentUser|PlaySound|PostLogonDialog|PrintScreen|QueryGroupMembership|StartApp|SwitchDisplayLanguage|TseGetClientId|TseGetClientNodeName|TseQueryRunningOnClient|TseQueryRunningOnConsole)\\b\\s*)"
+		},
+		{
+			"name": "support.function.archestra.sql",
+			"match": "(?i)(?:(\\.)\\s*(AddRow|DeleteCurrentRow|Dispose|ExecuteAsync|ExecuteAsyncCancel|ExecuteSync|GetCurrentRowColumnByIndex|GetCurrentRowColumnByName\n  |SetBitParameterByName|SetCharParameterByName|SetDecimalParameterByName|SetDateTimeParameterByName|SetDoubleParameterByName|SetFloatParameterByName|SetIntParameterByName|SetLongParameterByName\n  |SetBitParameterByIndex|SetCharParameterByIndex|SetDateTimeParameterByIndex|SetDecimalParameterByIndex|SetDoubleParameterByIndex|SetFloatParameterByIndex|SetIntParameterByIndex|SetLongParameterByIndex\n  |CommandTimeout|CurrentRowNumber|CurrentTableNumber|Disposed|ExecutionState|LastExecutionError|RowCount)\\b\\s*)"
+		},
+		{
+			"match": "(?x)(?i)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(aaDBAccess)(?:\\s*(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\n  CreateConnection|GetCommand|GetConnection|GetDiagnostics|GetTransaction|LogDiagnostics|RemoveCommand|RemoveTransaction|ResetDiagnostics|Shutdown))?\\b(?!\\$)",
+			"captures": {
+				"1": {
+					"name": "support.class.aaDBAccess.archestra"
+				},
+				"2": {
+					"name": "punctuation.accessor.archestra"
+				},
+				"3": {
+					"name": "punctuation.accessor.optional.archestra"
+				},
+				"4": {
+					"name": "support.function.aaDBAccess.archestra"
+				}
+			}
+		},
+		{
+			"match": "(?x)(?i)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(aaDBCommand)(?:\\s*(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\n  AddRow|DeleteCurrentRow|Dispose|ExecuteAsync|ExecuteAsyncCancel|ExecuteSync|GetCurrentRowColumnByIndex|GetCurrentRowColumnByName\n  |SetBitParameterByName|SetCharParameterByName|SetDecimalParameterByName|SetDateTimeParameterByName|SetDoubleParameterByName|SetFloatParameterByName|SetIntParameterByName|SetLongParameterByName\n  |SetBitParameterByIndex|SetCharParameterByIndex|SetDateTimeParameterByIndex|SetDecimalParameterByIndex|SetDoubleParameterByIndex|SetFloatParameterByIndex|SetIntParameterByIndex|SetLongParameterByIndex\n  |CommandTimeout|CurrentRowNumber|CurrentTableNumber|Disposed|ExecutionState|LastExecutionError|RowCount|))?\\b(?!\\$)",
+			"captures": {
+				"1": {
+					"name": "support.class.aaDBCommand.archestra"
+				},
+				"2": {
+					"name": "punctuation.accessor.archestra"
+				},
+				"3": {
+					"name": "punctuation.accessor.optional.archestra"
+				},
+				"4": {
+					"name": "support.function.aaDBCommand.archestra"
+				}
+			}
+		},
+		{
+			"name": "support.class.archestra.uda",
+			"match": "(?i)\\s*(Me|MyEngine|MyContainer|MyArea|MyEngine|MyPlatform)(?:(\\.)\\s*)\\s*\\b([a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*+)"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.archestra",
+			"begin": "\"",
+			"end": "\""
+		}
+	},
+	"scopeName": "source.archestra"
+}

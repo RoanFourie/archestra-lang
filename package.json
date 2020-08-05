@@ -1,0 +1,32 @@
+{
+    "name": "archestra-lang",
+    "displayName": "ArchestrA Lang",
+    "description": "Archestra Syntax highlighting.",
+    "version": "0.1.0",
+    "publisher": "RoanFourie",
+    "license": "Apache-2.0",
+    "engines": {
+        "vscode": "^1.36.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "archestra",
+            "aliases": ["ArchestrA", "archestra"],
+            "extensions": [".archestra"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "archestra",
+            "scopeName": "source.archestra",
+            "path": "./syntaxes/archestra.tmLanguage.json"
+        }],
+        "themes": [{
+            "label": "archestra",
+            "uiTheme": "vs-dark",
+            "path": "./themes/archestra.tmTheme.json"
+        }]
+    }
+}
