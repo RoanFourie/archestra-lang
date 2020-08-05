@@ -14,9 +14,9 @@ Archestra Syntax highlighting for QuickScript syntax scripts used within the Arc
 
 - Have Microsoft Visual Studio Code pre-installed on your Windows computer.  
 - Install this extension.  
-- Your Archestra quickscript dot NET code files should be normal text files saved with a '*.archestra' file extension.  
+- Your Archestra quickscript dot NET code files should be normal text files saved with a ```*.archestra``` file extension.  
 - When you open the file you will have syntax highlighting.  
-- This extension were developed on a Windows 10 based computer, no compatibility were tested.  
+- This extension were developed on a Windows 10 based computer.  
 
 ## Known Issues  
 
