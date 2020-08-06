@@ -2,7 +2,7 @@
     "name": "archestra-lang",
     "displayName": "ArchestrA Lang",
     "description": "Archestra Syntax highlighting.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "RoanFourie",
     "repository": "https://github.com/RoanFourie/archestra-lang.git",
     "license": "Apache-2.0",
@@ -13,6 +13,18 @@
     "categories": [
         "Programming Languages"
     ],
+    "tags": [
+        "archestra",
+        "syntax highlighting",
+        "programming language"
+    ],
+    "branding": {
+        "color": "rgb(18, 30, 33)",
+        "theme": "dark"
+    },
+    "icons": {
+        "default": "icon.png"
+    },
     "contributes": {
         "languages": [{
             "id": "archestra",
@@ -24,11 +36,6 @@
             "language": "archestra",
             "scopeName": "source.archestra",
             "path": "./syntaxes/archestra.tmLanguage.json"
-        }],
-        "themes": [{
-            "label": "archestra",
-            "uiTheme": "vs-dark",
-            "path": "./themes/archestra.tmTheme.json"
         }]
     }
 }

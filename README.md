@@ -1,35 +1,39 @@
 
 # ArchestrA Lang  
-### Archestra Syntax highlighting.  
+
+## Archestra Syntax highlighting  
 
 Archestra Syntax highlighting for QuickScript syntax scripts used within the ArchestrA IDE in System Platform. Write the scripts outside the IDE using Visual Studio Code and this extension then copy and paste it into the archestra script in the IDE.  
 
+## Quick Start  
+
+* Step 1. Have Microsoft Visual Studio Code pre-installed on your Windows computer.  
+* Step 2. Install this extension (archestra lang) from within the Visual Studio Code market place.  
+* Step 3. Create a plain text file with the extension ```.archestra``` and start coding. Your file will now have syntax highlighting associated with the Archestra System Platform environment.  
+* Step 4. Copy and paste the end resulting script into the Archestra IDE.  
+
 ## Features  
 
-- **Syntax Highlighting**  
+* **Syntax Highlighting**  
 
 ![Example](demo.png)  
 
-## Requirements  
-
-- Have Microsoft Visual Studio Code pre-installed on your Windows computer.  
-- Install this extension.  
-- Your Archestra quickscript dot NET code files should be normal text files saved with a ```*.archestra``` file extension.  
-- When you open the file you will have syntax highlighting.  
-- This extension were developed on a Windows 10 based computer.  
-
-## Known Issues  
-
-No code completion yet.  
-
 ## Release Notes  
 
-This project were build and managed using Microsoft's Visual Studio Code editor, for more information see: [Visual Studio Code](https://code.visualstudio.com/)  
+### 0.1.1  
+
+* Remove the error and irrelevant "Color Theme" feature.  
+* Structure and update the change log.  
+* Upload an icon.  
 
 ### 0.1.0  
 
-Initial release of Archestra-VSCode-Extension.  
-Depending on popularity, I may update the extension.  
+* Initial release.  
+
+## Questions, issues, feature requests, and contributions  
+
+* Any and all feedback is appreciated and welcome!  
+* If you come across a problem with the extension, [please file an issue](https://github.com/RoanFourie/archestra-lang/issues)  
 
 ## Licensing  
 
@@ -45,8 +49,6 @@ Copyright 2019 Roan Fourie
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License. 
+   limitations under the License.  
 
 -----------------------------------------------------------------------------------------------------------
-
-
