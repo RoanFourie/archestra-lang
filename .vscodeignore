@@ -3,3 +3,5 @@
 .gitignore
 vsc-extension-quickstart.md
 *.vsix 
+ignore/**
+ToDo.md

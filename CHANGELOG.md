@@ -15,5 +15,5 @@ All notable changes to the "archestra-lang" extension will be documented in this
 
 ### 0.1.0  
 
-* Initial release of Archestra-VSCode-Extension.  
+* Initial release of ArchestrA-Lang extension.  
 * Depending on popularity, I may update the extension.

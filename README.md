@@ -1,6 +1,11 @@
 
 # ArchestrA Lang  
 
+![Github tag (latest by date)](https://img.shields.io/github/v/tag/RoanFourie/archestra-lang?style=plastic)  
+![GitHub last commit](https://img.shields.io/github/last-commit/RoanFourie/archestra-lang?style=plastic)  
+![Maintenance](https://img.shields.io/maintenance/yes/2020?style=plastic)  
+
+
 ## Archestra Syntax highlighting  
 
 Archestra Syntax highlighting for QuickScript syntax scripts used within the ArchestrA IDE in System Platform. Write the scripts outside the IDE using Visual Studio Code and this extension then copy and paste it into the archestra script in the IDE.  
